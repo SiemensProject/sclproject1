@@ -1,0 +1,11 @@
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\SCLMenu\Library\bin\Debug\Library.dll
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\SCLMenu\Library\bin\Debug\Library.pdb
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.dll
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.pdb
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\bin\Debug\Library.dll
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\bin\Debug\Library.pdb
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.dll
+C:\Users\Alchemy.DESKTOP-V8A10HM\Desktop\Siemens_Project\SCLMenu\Library\obj\Debug\Library.pdb

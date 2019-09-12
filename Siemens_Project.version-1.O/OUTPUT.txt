@@ -1,0 +1,275 @@
+ VAR_OUTPUT
+
+    MV          {S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;';S7_xqc:='Value,true;'; S7_xtrend:='Value,MV_OpScale.Low,MV_OpScale.High;'; S7_edit:='para'}
+                : AnaVal;        // Manipulated variable, Control output
+    MV_HiAct    {S7_visible:='false'; S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_edit:='para'}
+                : DigVal;        // MV high limit is actively restricting manipulated variable
+    MV_LoAct    {S7_visible:='false'; S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_edit:='para'}
+                : DigVal;        // MV low limit is actively restricting manipulated variable
+
+    ManHiOut    {S7_visible:='false'}
+                : STRUCT
+                  Value : REAL := 100.0;    // Value
+                  ST    : BYTE := 16#80;    // Signal Status
+                END_STRUCT;      // High limit for Man
+    ManLoOut    {S7_visible:='false'}
+                : AnaVal;        // Low limit for Man
+
+    RbkOut      {S7_visible:='false'; S7_dynamic:='true'; S7_contact:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_xqc:='Value,true;'; S7_edit:='para'}
+                : AnaVal;        // Readback value output
+    RbkWH_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Rbk warning high active
+    RbkWL_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Rbk warning low active
+
+    LockAct     {S7_visible := 'false'; S7_dynamic := 'true'}
+                :DigVal ; // 1 = Interlock is active
+
+    MS_Release  : DigVal; // Release for maintenance; 1 = Permission from operator
+
+    GrpErr      {S7_dynamic := 'true'; S7_contact:='true'}
+                :DigVal ; // 1 = Group error is active
+
+    RdyToStart  {S7_dynamic := 'true'; S7_contact:='true'}
+                :DigVal ; // 1 = ready to start
+
+    OosAct      {S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:= 'Value,true;'} //S7_m_c because special case in symbol
+                : DigVal; // 1 = Block is "Out of service"
+
+    ManAct      {S7_dynamic:='true'}
+                : STRUCT
+                  Value : BOOL := true; // Value
+                  ST    : BYTE := 16#80;    // Signal Status
+                END_STRUCT;      // 1 = Manual mode active
+    AutAct      {S7_dynamic:='true'; S7_contact:='true'; S7_edit:='para'}
+                : DigVal;        // 1 = Automatic mode active
+
+    LoopClosed  {S7_visible:='false'; S7_dynamic:='true'; S7_contact:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_edit:='para'}
+                : DigVal;        // 1 = Loop control is closed, 0 = Loop control is opened
+
+    SP_ExtAct   {S7_dynamic:='true'; S7_contact:='true'}
+                : DigVal;        // 1 = External setpoint active; 0 = Internal setpoint active
+    AdvCoAct    {S7_visible:='false'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'} // S7_m_c because of OPC server
+                : DigVal;        // 1 = Advanced control (program mode) active
+    AdvCoRdy    {S7_visible:='false'}
+                : DigVal;        // 1 = Controller ready for advanced control (program mode)
+
+    CascaCut    {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1= Cascade connection cut, slave controller not prepared to accept SP_Ext
+
+    SP          {S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_xqc:='Value,true;'; S7_xtrend:='Value,PV_OpScale.Low,PV_OpScale.High;'; S7_edit:='para'}
+                : AnaVal;        // Active setpoint as calculated and used by controller
+    SP_ExtOut   {S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_dynamic:='true'}
+                : AnaVal;        // External setpoint output
+
+    SP_IntOut   {S7_m_c:= 'true'; S7_dynamic:='true'}
+                : REAL :=0.0;        // Internal setpoint output
+
+    SP_RateTarget {S7_visible:='false'; S7_m_c:='true'; S7_dynamic:='true'}
+                : REAL := 0.0;   // Target  for limitation of setpoint gradients
+    SP_RemRT    {S7_visible:='false'; S7_m_c:='true'; S7_dynamic:='true'}
+                : REAL := 0.0;   // Remaining ramp time of setpoint
+
+    SP_ExHiAct  {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = External setpoint high limit active
+    SP_ExLoAct  {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = External setpoint low limit active
+    SP_UpRaAct  {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Positive rate limit of setpoint active
+    SP_DnRaAct  {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Negative rate limit of setpoint active
+
+    SP_InHiOut  {S7_visible:='false'}
+                : STRUCT
+                  Value : REAL := 100.0;    // Value
+                  ST    : BYTE := 16#80;    // Signal Status
+                END_STRUCT;      // High limit for SP_Int, corresponds to input parameter SP_InHiLim
+    SP_InLoOut  {S7_visible:='false'}
+                : AnaVal;        // Low limit for SP_Int, corresponds to input parameter SP_InLoLim
+
+    BypassAct   {S7_dynamic:='true'}
+                :DigVal; // 1: Bypass is activated in this block
+
+    PV_Out      {S7_xqc:='Value,true;'; S7_dynamic:='true'; S7_contact:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_xtrend:='Value,PV_OpScale.Low,PV_OpScale.High;'; S7_edit:='para'}
+                : AnaVal;        // Process value (controlled variable) output
+        StcAnaValPV_Out AT PV_Out : STRUCT
+                Value : REAL;   // Value
+                ST    : BYTE;   // Signal Status
+                Bit0  : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                              END_STRUCT;
+
+    PV_AH_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV alarm high active
+        StcDigValPV_AH_Act AT PV_AH_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    PV_WH_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV warning high active
+        StcDigValPV_WH_Act AT PV_WH_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    PV_TH_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV tolerance message high active
+        StcDigValPV_TH_Act AT PV_TH_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    PV_TL_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV tolerance message low active
+        StcDigValPV_TL_Act AT PV_TL_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    PV_WL_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV warning low active
+        StcDigValPV_WL_Act AT PV_WL_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    PV_AL_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = PV alarm low active
+        StcDigValPV_AL_Act AT PV_AL_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+
+    PV_HysOut   {S7_visible:='false'}
+                :REAL := 0.0; //PV - Alarm Hysteresis Output
+    PV_AH_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - High Alarm Limit Output
+    PV_WH_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - High Warning Limit Output
+    PV_TH_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - High Tolerance Limit Output
+    PV_TL_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - Low Tolerance Limit Output
+    PV_WL_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - Low Warning Limit Output
+    PV_AL_Out   {S7_visible:='false'}
+                :REAL := 0.0; // PV - Low Alarm Limit Output
+                                
+    PV_ToleHi   {S7_visible:='false';S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_edit:='para'}
+                : AnaVal;        // High limit of 3-sigma band around the setpoint (only with ConPerMon)
+    PV_ToleLo   {S7_visible:='false';S7_m_c:= 'true'; S7_xm_c:='Value,true;'; S7_edit:='para'}
+                : AnaVal;        // Low limit of 3-sigma band around the setpoint (only with ConPerMon)
+
+    ER          {S7_dynamic:='true'; S7_m_c:= 'true'; S7_xm_c:='Value,true;'}
+                : AnaVal;        // Control error
+    ER_AH_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = ER  alarm high active
+        StcDigValER_AH_Act AT ER_AH_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    ER_AL_Act   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = ER  alarm low active
+        StcDigValER_AL_Act AT ER_AL_Act : STRUCT
+                Value : BOOL;   // Value
+                Bypass: BOOL;   // Hidden fill bit 1: Bypass active
+                ST    : BYTE;   // Signal Status
+                              END_STRUCT;
+    ER_A_DCOut  {S7_visible:='false'}
+                : REAL := 0.0;   // Effective Delay time for incoming ER alarms [s]
+
+    FFwdHiAct   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Feedforward high limit active
+    FFwdLoAct   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // 1 = Feedforward low limit active
+
+    SumMsgAct   {S7_visible:='false'; S7_dynamic:='true'}
+                : DigVal;        // Summary message, 1 = Any of the process, external or system messages is active
+
+    GainEff     {S7_visible:='false'}
+                : REAL := 1.0;   // Effective proportional gain, depends on NegGain, Gain, NormPV and NormMV
+
+    PV_UnitOut  {S7_visible:='false'}
+                : INT := 0;      // Unit of measurement for process value, link to PV_Unit of ConPerMon block
+    MV_UnitOut  {S7_visible:='false'}
+                : INT := 0;      // Unit of measurement for manipulated var., link to MV_Unit of ConPerMon block
+
+    P_Part      {S7_visible:='false'}
+                : REAL := 0.0;   // P action of PID algorithm
+    I_Part      {S7_visible:='false'}
+                : REAL := 0.0;   // I action of PID algorithm
+    D_Part      {S7_visible:='false'}
+                : REAL := 0.0;   // D action of PID algorithm
+
+    DynDeadBand {S7_dynamic:='true'}
+                : REAL := 0.0;   // Dynamic deadband
+    PhaseDeadBand {S7_dynamic:='true'}
+          : INT:= 0;             // Phase of dynamic deadband adaptation, 0: DeadBand active, 1: DeadBand deactivated, 2: settling
+    SettlingTimer{S7_dynamic:='true'}
+                : REAL:= 0.0;    // Timer for settling of closed control loop
+
+    ErrorNum    {S7_visible:='false'; S7_dynamic:='true'}
+                : INT := INT#-1; // Error number, as defined in the online help
+
+    Status1     {S7_visible:='false'; S7_dynamic:='true'; S7_m_c:='true'}
+                : DWORD := 16#0; // Status word 1, defined in the online help
+    Status2     {S7_visible:='false'; S7_dynamic:='true'; S7_m_c:='true'}
+                : DWORD := 16#0; // Status word 2, defined in the online help
+    Status3     {S7_visible:='false'; S7_dynamic:='true'; S7_m_c:='true'}
+                : DWORD := 16#0; // Status word 3, defined in the online help
+
+    Status4     {S7_visible:='false'; S7_dynamic:='true'}
+                : DWORD := 16#0; // Status word 4, defined in the online help
+
+    OS_PermOut  {S7_visible:='false'; S7_m_c:='true'}
+                : DWORD := 16#FFFFFFFF; // Display of operator permissions OS_Perm
+    OS_PermLog  {S7_visible:='false'; S7_m_c:='true'}
+                : DWORD := 16#FFFFFFFF; // Operator permissions with settings changed by the block algorithm
+    OS1PermOut  {S7_visible:='false'; S7_m_c:='true'}
+                : DWORD := 16#FFFFFFFF; // Display of operator permissions OS1Perm
+    OS1PermLog  {S7_visible:='false'; S7_m_c:='true'}
+                : DWORD := 16#FFFFFFFF; // Operator permissions with settings changed by the block algorithm
+
+    OpSt_Out    {S7_visible := 'false'; S7_m_c := 'true'}
+                :DWORD := 16#0;  // Enabled operator stations
+
+    ST_Worst    {S7_visible:='false'; S7_m_c:='true'}
+                : BYTE := 16#80; // Worst signal status
+
+    MsgErr1     {S7_visible:='false'}
+                : BOOL := false; //1=Messaging error occurs
+    MsgStat1    {S7_visible:='false'}
+                : WORD := 16#0000;  //Message status
+    MsgAckn1    {S7_visible:='false'}
+                : WORD := 16#0000;     //Message acknowledgement status
+    MsgErr2     {S7_visible:='false'}
+                : BOOL := false; //1=Messaging error occurs
+    MsgStat2    {S7_visible:='false'}
+                : WORD := 16#0000;  //Message status
+    MsgAckn2    {S7_visible:='false'}
+                : WORD := 16#0000;     //Message acknowledgement status
+
+    EnAcquireOut  {S7_visible := 'false'}
+                  : BOOL; //Reserved
+                                                       
+    IsAcquired    {S7_visible := 'false'}
+                  : BOOL; //Reserved
+                      
+    AfState       {S7_visible := 'false'; S7_contact := 'true'; S7_enum := 'ES_AcquireStates'}
+                  : BYTE;  //Reserved
+                                        
+    AfReqPrev     {S7_visible := 'false'; S7_contact := 'true'}
+                  : BYTE;  //Reserved
+                    
+    AfTimeStamp   {S7_visible := 'false'; S7_contact := 'true'}
+                  : DINT;  //Reserved
+                    
+    AfWaitTmAct   {S7_visible := 'false'; S7_contact := 'true'}
+                  : REAL;  //Reserved
+                    
+    StUnified     {S7_visible := 'false'; S7_enum := 'APL_UnifiedSt'}
+                  : DWORD ; //Reserved
+                  

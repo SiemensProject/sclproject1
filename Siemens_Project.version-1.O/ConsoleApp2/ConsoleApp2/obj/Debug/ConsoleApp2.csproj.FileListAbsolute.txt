@@ -1,0 +1,18 @@
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Alchemy.DESKTOP-V8A10HM\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+I:\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+I:\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+I:\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+I:\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+I:\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+I:\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csprojResolveAssemblyReference.cache
+I:\Siemens_Project\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+I:\Siemens_Project\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+I:\Siemens_Project\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\CHAITHRA H S\Desktop\Siemens_Project\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
