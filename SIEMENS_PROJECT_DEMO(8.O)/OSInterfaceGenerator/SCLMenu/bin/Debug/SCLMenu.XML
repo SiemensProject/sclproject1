@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SCLMenu</name>
+    </assembly>
+    <members>
+        <member name="T:SCLMenu.Form1">
+             <summary>
+            Form1 is the UI where user can select source file. UI contains option to select  output format.
+            It also allows user to select output target folder.
+             </summary>
+        </member>
+        <member name="P:SCLMenu.Form1.InputFileLocation">
+            <summary>
+            Capture the input file location which is selected by the user
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Form1.OutputFileLocation">
+            <summary>
+            Capture the output file location where user wants to store the output contents after converting to XLS or JSON formats
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Form1.PropertyKey">
+            <summary>
+            Input file properties key holder
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Form1.PropertyValue">
+            <summary>
+            Input file properties value holder
+            </summary>
+        </member>
+        <member name="F:SCLMenu.Form1.LstEDc">
+            <summary>
+            Holds the collection of property values of the processed input file 
+            </summary>
+        </member>
+        <member name="F:SCLMenu.Form1.Source_InputOutputContents">
+            <summary>
+            Helper collection for holder the intermediate properties scanned within var_input and var_output
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Form1.propertyName">
+            <summary>
+            contains a property called "name " of input file
+            </summary>
+        </member>
+        <member name="M:SCLMenu.Form1.#ctor">
+            <summary>
+            Default Constructor initializing with Combo box
+            </summary>   
+        </member>
+        <member name="M:SCLMenu.Form1.ComboBox1_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Method for retrieving selected item(Key) in combo box
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SCLMenu.Form1.BtnSelectFile_Click(System.Object,System.EventArgs)">
+            <summary>
+            Method allows user to browse the input file.
+            It calls SCL_FileExtractor.GetNamePropertypValue() to extract input and output variables from the input file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SCLMenu.Form1.ComboBox2_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Method for retrieving selected item(Value) in combo box
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SCLMenu.Form1.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Generating output file (csv or json)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:SCLMenu.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SCLMenu.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SCLMenu.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SCLMenu.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:SCLMenu.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SCLMenu.Properties.Resources.SiemensLogo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

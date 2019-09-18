@@ -1,0 +1,7 @@
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\bin\Debug\Library.dll
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\bin\Debug\Library.pdb
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\bin\Debug\Newtonsoft.Json.dll
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\bin\Debug\Newtonsoft.Json.xml
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\obj\Debug\SourceUtilities.csprojResolveAssemblyReference.cache
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\obj\Debug\Library.dll
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\Library\obj\Debug\Library.pdb

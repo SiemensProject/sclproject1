@@ -1,0 +1,15 @@
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\SCLMenu.exe.config
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\SCLMenu.XML
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\SCLMenu.exe
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\SCLMenu.pdb
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\SCLMenu.exe
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\SCLMenu.pdb
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\Library.dll
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\Newtonsoft.Json.dll
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\Library.pdb
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\Newtonsoft.Json.pdb
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\bin\Debug\Newtonsoft.Json.xml
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\OSInterfaceGeneratorTool.csprojResolveAssemblyReference.cache
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\SCLMenu.Form1.resources
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\SCLMenu.Properties.Resources.resources
+I:\SIEMENS_PROJECT_DEMO\OSInterfaceGenerator\SCLMenu\obj\Debug\OSInterfaceGeneratorTool.csproj.GenerateResource.Cache
